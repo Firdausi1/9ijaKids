@@ -1,0 +1,45 @@
+.body{
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex: 1;
+
+}
+
+.game{
+    width: 20%;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 6px -6px rgb(105, 105, 105);
+    color: #6D7883;
+}
+
+.game:nth-child(even){
+    background-color: #fd6c6f;
+    border: 1px solid #fd6c6f;
+    color: #fff;
+}
+
+.game-image{
+    width: 100%;
+}
+
+.game-text{
+    padding: 15px;
+}
+
+.game-text p, .game-text h4{
+    letter-spacing: 1px;
+    margin: 0;
+}
+.game-text h4{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.game-text p{
+    font-size: 15px;
+    line-height: 1.8;
+}
