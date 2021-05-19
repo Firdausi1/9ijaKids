@@ -19,7 +19,7 @@
 
 .game:nth-child(even){
     background-color: #fd6c6f;
-    border: 1px solid #fd6c6f;
+    border: none;
     color: #fff;
 }
 
