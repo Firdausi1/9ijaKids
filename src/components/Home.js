@@ -30,12 +30,12 @@ function Home() {
 	};
 
 	const displayMatch = (e) => {
-		const matchSearch = filter(e.target.value, games);
-		setTopic(matchSearch);
 		setValue(e.target.value);
 		if (e.target.value === "") {
 			setDisplay(false);
 		} else {
+            const matchSearch = filter(e.target.value, games);
+            setTopic(matchSearch);
 			setDisplay(true);
 			setList(true);
 		}
@@ -45,6 +45,11 @@ function Home() {
 		setTopic(matchSearch);
 		setValue(e.target.innerText);
 		setList(false);
+    };
+    const displayGroup = (e) => {
+		const matchSearch = filter(e.target.value, games);
+        setTopic(matchSearch);
+        setList(false)
 	};
 
 	useEffect(() => {
@@ -80,12 +85,12 @@ function Home() {
 				</div>
 				<div className="home-filter">
 					<h3>Filter by:</h3>
-					<select name="" onChange={displayMatch}>
+					<select name="" onChange={displayGroup}>
 						<option value="">Groups</option>
 						<option value="Academic">Academic</option>
 						<option value="Financial Literacy">Financial Literacy</option>
 					</select>
-					<select name="" onChange={displayMatch}>
+					<select name="" onChange={displayGroup}>
 						<option value="">Levels</option>
 						<option value="key stage 1">Key Stage 1</option>
 						<option value="key stage 2">Key Stage 2</option>
