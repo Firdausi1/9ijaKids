@@ -6,7 +6,7 @@ import Body from "./Body";
 function Home() {
 	const [games, setGame] = useState([]);
 	const [topics, setTopic] = useState([]);
-	const [display, setDisplay] = useState(false);
+	const [display, setDisplay] = useState(true);
 	const [list, setList] = useState(true);
 	const [value, setValue] = useState("");
 
@@ -50,6 +50,7 @@ function Home() {
 		const matchSearch = filter(e.target.value, games);
         setTopic(matchSearch);
         setList(false)
+        setDisplay(true)
 	};
 
 	useEffect(() => {
