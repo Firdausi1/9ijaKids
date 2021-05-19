@@ -57,7 +57,8 @@
 	border: 1px solid #c9c7c7;
 	width: 100px;
 	outline: none;
-	color: #6d7883;
+    color: #6d7883;
+    cursor: pointer;
 }
 .topic-list {
 	margin: 0;
@@ -66,6 +67,7 @@
 }
 
 .topic-list li {
+    cursor: pointer;
 	background: white;
 	color: #6d7883;
 	list-style: none;
