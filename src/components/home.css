@@ -1,57 +1,80 @@
-.home{
-    width: 80%;
-    margin: 0 auto;
+.home {
+	width: 80%;
+	margin: 0 auto;
 }
-.home h2{
-    font-size: 36px;
-    text-align: center;
-    color: #777777;
+.home h2 {
+	font-size: 36px;
+	text-align: center;
+	color: #777777;
 }
-.home-searchBar{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #f0f0f0;
-    background-color: #f0f0f0;
-    width: 60%;
-    height: 20%;
+.home-list {
+	width: 60%;
 }
-.home-searchBar .search{
-    background-color: #f0f0f0;
-    width: 100%;
-    outline: none;
-    border: none;
-    padding: 10px;
+.home-searchBar {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #f0f0f0;
+	background-color: #f0f0f0;
+	height: 20%;
+}
+.home-searchBar .search {
+	background-color: #f0f0f0;
+	width: 100%;
+	outline: none;
+	border: none;
+	padding: 10px;
+	color: #6d7883;
 }
 
-.home-searchBar--icon{
-    display: flex;
-    background-color: #f0f0f0;
-    width: 10%;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
+.home-searchBar--icon {
+	display: flex;
+	background-color: #f0f0f0;
+	width: 10%;
+	padding: 10px;
+	align-items: center;
+	justify-content: center;
 }
-.home-search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.home-search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.home-filter{
-    display: flex;
-    align-items: center;
+.home-filter {
+	display: flex;
+	align-items: center;
     padding-left: 10px;
+    align-self: start;
 }
 
-.home-filter h3{
-    font-size: 16px;
-    margin-right: 10px;
-    color: #777777;
+.home-filter h3 {
+	font-size: 16px;
+	margin-right: 10px;
+	color: #777777;
 }
 
-.home-filter select{
-    height: 30px;
-    border: 1px solid #c9c7c7;
-    width: 100px;
-    outline: none;
+.home-filter select {
+	height: 30px;
+	border: 1px solid #c9c7c7;
+	width: 100px;
+	outline: none;
+	color: #6d7883;
+}
+.topic-list {
+	margin: 0;
+	padding: 0;
+	width: 60%;
 }
 
+.topic-list li {
+	background: white;
+	color: #6d7883;
+	list-style: none;
+	border-bottom: 1px solid #d8d8d8;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+	margin: 0;
+	padding: 20px;
+	transition: background 0.2s;
+	display: flex;
+	justify-content: space-between;
+	text-transform: capitalize;
+}

@@ -6,6 +6,9 @@ import Body from "./Body";
 function Home() {
 	const [games, setGame] = useState([]);
 	const [topics, setTopic] = useState([]);
+	const [display, setDisplay] = useState(false);
+	const [list, setList] = useState(true);
+	const [value, setValue] = useState("");
 
 	const getGameData = async () => {
 		const url =
@@ -29,6 +32,19 @@ function Home() {
 	const displayMatch = (e) => {
 		const matchSearch = filter(e.target.value, games);
 		setTopic(matchSearch);
+		setValue(e.target.value);
+		if (e.target.value === "") {
+			setDisplay(false);
+		} else {
+			setDisplay(true);
+			setList(true);
+		}
+	};
+	const displayTopic = (e) => {
+		const matchSearch = filter(e.target.innerText, games);
+		setTopic(matchSearch);
+		setValue(e.target.innerText);
+		setList(false);
 	};
 
 	useEffect(() => {
@@ -39,16 +55,28 @@ function Home() {
 		<div className="home">
 			<h2>9ijakids Game List</h2>
 			<div className="home-search">
-				<div className="home-searchBar">
-					<input
-						type="search"
-						onChange={displayMatch}
-						className="search"
-						placeholder="Search Games by Topic"
-					/>
-					<div className="home-searchBar--icon">
-						<SearchIcon />
+				<div className="home-list">
+					<div className="home-searchBar">
+						<input
+							type="search"
+							onChange={displayMatch}
+							className="search"
+							placeholder="Search Games by Topic"
+							value={value}
+						/>
+						<div className="home-searchBar--icon">
+							<SearchIcon />
+						</div>
 					</div>
+					{display ? (
+						<ul className="topic-list">
+							{topics.map((game) =>
+								list ? <li onClick={displayTopic}>{game.Topic}</li> : " "
+							)}
+						</ul>
+					) : (
+						""
+					)}
 				</div>
 				<div className="home-filter">
 					<h3>Filter by:</h3>
@@ -65,16 +93,20 @@ function Home() {
 					</select>
 				</div>
 			</div>
-			<div className="body">
-				{" "}
-				{topics.map((topic) => (
-					<Body
-						title={topic.GameTitle}
-						image={topic.GameImage}
-						description={topic.GameDescription}
-					/>
-				))}
-			</div>
+			{display ? (
+				<div className="body">
+					{" "}
+					{topics.map((topic) => (
+						<Body
+							title={topic.GameTitle}
+							image={topic.GameImage}
+							description={topic.GameDescription}
+						/>
+					))}
+				</div>
+			) : (
+				""
+			)}
 		</div>
 	);
 }
